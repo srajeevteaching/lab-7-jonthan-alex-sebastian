@@ -8,6 +8,7 @@
 import random
 
 
+# User input for the amount of rolls
 def get_number_of_rolls(input_message):
     number_of_rolls = input(input_message)
     while not number_of_rolls.isdigit():
@@ -15,6 +16,7 @@ def get_number_of_rolls(input_message):
     return int(number_of_rolls)
 
 
+# Creating the list of dice rolls according to the amount of number rolls
 def roll_dice(number):
     simulated_list = []
     for i in range(number):
@@ -25,6 +27,7 @@ def roll_dice(number):
     return simulated_list
 
 
+# Counting how many times a number is rolled
 def create_histogram_list(list_of_roles):
     counted_list = []
     count = 2
@@ -37,6 +40,7 @@ def create_histogram_list(list_of_roles):
     return counted_list
 
 
+# Printing the histogram to show the occurrences of a number with an * representing the amount of times it repeats
 def print_histogram(histogram_list):
     i = 0
     counter = 2
