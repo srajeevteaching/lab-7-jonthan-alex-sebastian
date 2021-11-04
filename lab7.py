@@ -25,15 +25,33 @@ def roll_dice(number):
     return simulated_list
 
 
-def create_histogram(list_of_roles):
+def create_histogram_list(list_of_roles):
     counted_list = []
+    count = 2
+    i = 0
+    while i <= 10:
+        count_variable = list_of_roles.count(count)
+        counted_list.append(count_variable)
+        count += 1
+        i += 1
     return counted_list
+
+
+def print_histogram(histogram_list):
+    i = 0
+    counter = 2
+    while i <= 10:
+        print(str(counter) + ":\t" + ("*" * histogram_list[i]))
+        counter += 1
+        i += 1
 
 
 def main():
     user_number_rolls = get_number_of_rolls("How many times would you like to roll: ")
     list_of_all_rolls = roll_dice(user_number_rolls)
-    print(list_of_all_rolls)
+    counted_rolls_list = create_histogram_list(list_of_all_rolls)
+    print(counted_rolls_list)
+    print_histogram(counted_rolls_list)
 
 
 main()
